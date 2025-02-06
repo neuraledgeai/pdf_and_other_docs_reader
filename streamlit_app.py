@@ -1,4 +1,6 @@
 import streamlit as st
+from PyPDF2 import PdfReader
+from docx import Document
 
 st.title("PDF/Document Reader")
 st.write(
