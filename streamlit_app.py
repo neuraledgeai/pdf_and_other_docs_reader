@@ -7,7 +7,10 @@ def read_pdf(file):
     pdf_reader = PdfReader(file)
     text = ""
     for page in pdf_reader.pages:
-        text += page.extract_text()
+        # Extract text and ensure paragraph separation
+        page_text = page.extract_text()
+        if page_text:
+            text += page_text.strip() + "\n\n"  # Add extra line breaks
     return text
 
 # Function to read Word document
